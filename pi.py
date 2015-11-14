@@ -41,7 +41,7 @@ def reply(msg,chat_id):
 
 # sys.stdout.write("pi = 3.")
 
-for j in range(888):
+for j in range(88888888):
   linea = ""
   for i in range(64):
       linea = linea + str(toHex(pi_gen.next()))

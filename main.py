@@ -36,13 +36,13 @@ for line in lines:
     if r.status_code == 200:
         data=r.json()
 
-        print address, data
+        #print address, data
 
         btc = (float (data['data']['confirmed_balance']))
         
         #print btc
-        #sys.stdout.write('%s\r' % str(btc))
-        #sys.stdout.flush()
+        sys.stdout.write('%s\r' % str(btc))
+        sys.stdout.flush()
 
         if (btc > 0) :
             

@@ -20,8 +20,10 @@ def reply(msg,chat_id):
 s = open('1M.txt','r').read().strip()
 lines = s.split('\n')
 
+linea = 0
+
 for line in lines:
-    #print line
+    linea = linea + 1
     address = privtoaddr(line)
     url = "https://chain.so/api/v2/get_address_balance/BTC/" + address
     headers = {'Content-Type': 'application/json',
@@ -41,7 +43,7 @@ for line in lines:
         btc = (float (data['data']['confirmed_balance']))
         
         #print btc
-        sys.stdout.write('%s\r' % str(btc))
+        sys.stdout.write('%s\r' % str(linea))
         sys.stdout.flush()
 
         if (btc > 0) :

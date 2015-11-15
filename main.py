@@ -21,7 +21,7 @@ s = open('1M.txt','r').read().strip()
 lines = s.split('\n')
 
 for line in lines:
-    print line
+    #print line
     address = privtoaddr(line)
     url = "https://chain.so/api/v2/get_address_balance/BTC/" + address
     headers = {'Content-Type': 'application/json',

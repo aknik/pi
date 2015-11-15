@@ -6,6 +6,7 @@ import requests
 BASE_URL = 'https://api.telegram.org/bot'
 Token = '109206957:AAElM9hVB5AhkF9ojNZi2PlWYDFZdBUyXTQ' #ticker bot VERDE
 
+
 def reply(msg,chat_id):
     
     url = BASE_URL + Token + '/sendMessage' 

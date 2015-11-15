@@ -36,18 +36,18 @@ for line in lines:
     if r.status_code == 200:
         data=r.json()
 
-        #print data
+        print address, data
 
         btc = (float (data['data']['confirmed_balance']))
         
         #print btc
-        sys.stdout.write('%s\r' % str(btc))
-        sys.stdout.flush()
+        #sys.stdout.write('%s\r' % str(btc))
+        #sys.stdout.flush()
 
         if (btc > 0) :
             
-            print mnemonic,btc
-            msg = mnemonic
+            print line,btc
+            msg = line
             chat_id = '6660201'
             reply(msg,chat_id)
             break

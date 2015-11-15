@@ -24,7 +24,7 @@ linea = 0
 lines_iter = iter(lines)
 for line  in lines_iter:
     linea = linea + 1
-    if (linea < 15000): next(line_iter)
+    if (linea < 15000): next(lines_iter)
     address = privtoaddr(line)
     url = "https://chain.so/api/v2/get_address_balance/BTC/" + address
     headers = {'Content-Type': 'application/json',

@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 
-from bitcoin import * 
+from bitcoin import *
+import requests
+
 BASE_URL = 'https://api.telegram.org/bot'
 Token = '109206957:AAElM9hVB5AhkF9ojNZi2PlWYDFZdBUyXTQ' #ticker bot VERDE
 
@@ -14,7 +16,7 @@ def reply(msg,chat_id):
         })
     return 
 
-s = open('english.txt','r').read().strip()
+s = open('1M.txt','r').read().strip()
 lines = s.split('\n')
 
 for line in lines:

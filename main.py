@@ -21,10 +21,10 @@ s = open('1M.txt','r').read().strip()
 lines = s.split('\n')
 
 linea = 0
-
-for line  in lines:
+lines_iter = iter(lines)
+for line  in lines_iter:
     linea = linea + 1
-    if (linea < 15000): next(line)
+    if (linea < 15000): next(line_iter)
     address = privtoaddr(line)
     url = "https://chain.so/api/v2/get_address_balance/BTC/" + address
     headers = {'Content-Type': 'application/json',

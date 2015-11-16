@@ -21,11 +21,11 @@ s = open('1M.txt','r').read().strip()
 lines = s.split('\n')
 
 inicio = 15000
-linea = 0 +inicio
+linea = 0 + inicio
 
 lines_iter = iter(lines)
 
-for line in range(inicio,len(lines_iter)):
+for line in range(inicio,len(lines)):
     linea = linea + 1
     
     address = privtoaddr(line)

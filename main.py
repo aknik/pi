@@ -28,7 +28,7 @@ for line in lines:
     linea = linea + 1
     
     if ( linea < inicio ):
-        next(line)
+        next(lines)
     else:
     
         address = privtoaddr(line)

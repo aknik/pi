@@ -20,12 +20,14 @@ def reply(msg,chat_id):
 s = open('1M.txt','r').read().strip()
 lines = s.split('\n')
 
-inicio = 15000
+lastlinea = open('lastlinea.txt','r').read().strip()
+inicio = int (lastlinea)
+
 linea = 0 
 
 lines_iter = iter(lines)
 
-for line in range(lines_iter):
+for line in lines:
     linea = linea + 1
     
     if ( linea < inicio ):
@@ -46,13 +48,19 @@ for line in range(lines_iter):
         if r.status_code == 200:
             data=r.json()
 
-            #print address, data
+            print linea, data
 
             btc = (float (data['data']['confirmed_balance']))
             
             #print btc
             sys.stdout.write('%s\r' % str(linea))
             sys.stdout.flush()
+
+            with open('lastlinea.txt', 'w') as file_:
+                file_.write(str(linea))
+
+
+
 
             if (btc > 0) :
                 

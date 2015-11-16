@@ -31,34 +31,34 @@ for line in lines:
         next(line)
     else:
     
-    address = privtoaddr(line)
-    url = "https://chain.so/api/v2/get_address_balance/BTC/" + address
-    headers = {'Content-Type': 'application/json',
-              'Accept-Encoding': 'gzip, deflate' ,
-              'User-Agent': 'Ninguno' ,
-              'Connection': 'keep-alive'}
+        address = privtoaddr(line)
+        url = "https://chain.so/api/v2/get_address_balance/BTC/" + address
+        headers = {'Content-Type': 'application/json',
+                  'Accept-Encoding': 'gzip, deflate' ,
+                  'User-Agent': 'Ninguno' ,
+                  'Connection': 'keep-alive'}
 
-    btc = 0
+        btc = 0
 
-    r = requests.get(url,headers=headers)
-   
-    if r.status_code == 200:
-        data=r.json()
+        r = requests.get(url,headers=headers)
+       
+        if r.status_code == 200:
+            data=r.json()
 
-        #print address, data
+            #print address, data
 
-        btc = (float (data['data']['confirmed_balance']))
-        
-        #print btc
-        sys.stdout.write('%s\r' % str(linea))
-        sys.stdout.flush()
-
-        if (btc > 0) :
+            btc = (float (data['data']['confirmed_balance']))
             
-            print line,btc
-            msg = line
-            chat_id = '6660201'
-            reply(msg,chat_id)
-            break
-  
+            #print btc
+            sys.stdout.write('%s\r' % str(linea))
+            sys.stdout.flush()
+
+            if (btc > 0) :
+                
+                print line,btc
+                msg = line
+                chat_id = '6660201'
+                reply(msg,chat_id)
+                break
+      
 

@@ -23,12 +23,13 @@ lines = s.split('\n')
 inicio = 15000
 linea = 0 
 
+lines_iter = iter(lines)
 
 for line in lines:
     linea = linea + 1
     
     if ( linea < inicio ):
-        next(lines)
+        next(lines_iter)
     else:
     
         address = privtoaddr(line)

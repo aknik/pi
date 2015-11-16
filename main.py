@@ -25,7 +25,7 @@ linea = 0
 
 lines_iter = iter(lines)
 
-for line in lines:
+for line in range(lines_iter):
     linea = linea + 1
     
     if ( linea < inicio ):

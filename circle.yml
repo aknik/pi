@@ -1,0 +1,14 @@
+machine:
+  python:
+    version: 2.7
+dependencies:
+  pre:
+    
+    - pip install requests
+    - pip install bitcoin
+    
+test:
+  override:
+      
+    - python main.py
+

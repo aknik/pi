@@ -25,7 +25,7 @@ linea = 0 +inicio
 
 lines_iter = iter(lines)
 
-for line  in range(inicio,lines_iter):
+for line in range(inicio,len(lines_iter)):
     linea = linea + 1
     
     address = privtoaddr(line)
